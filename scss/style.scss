@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    font-style: normal;
+    letter-spacing: normal;
+}
+
+$whiteColor: #ffffff;
+$orangeColor: #f8c67d;
+$darkColor: #140202;
+$blackColor: #000000;
+$blackColor: #000000;
+$paddingSection: 1.5em 3.75em;
+
+@mixin flexSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin borderRadius {
+    border-radius: 15px;
+}
+
+@mixin darkRedBg {
+    background-color: #420707;
+    @include borderRadius;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button {
+    background: linear-gradient(180deg, #f42c2b 0%, rgba(0, 0, 0, 0) 100%), #460d09;
+    border-radius: 10px;
+    text-align: center;
+    color: $whiteColor;
+    text-transform: uppercase;
+    font-size: 0.75em;
+}
+
+@mixin paddingText {
+    padding: 2em 4em;
+}
+
+@mixin promo {
+    width: 15em;
+    height: 22em;
+    background-color: $whiteColor;
+    color: $blackColor;
+    padding: 1.5em 1em;
+    @include borderRadius;
+}
+
+
+
+button {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+}
+
+.body-container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+/*header*/
+
+.header {
+    @include flexCenter;
+    padding: 1em 0;
+
+    p {
+        font-weight: 600;
+        font-size: 1em;
+        line-height: 1em;
+        text-align: center;
+        color: $blackColor;
+        margin-right: 4em;
+        max-width: 27em;
+    }
+
+    a {
+        @include button;
+        padding: 1em 2em;
+    }
+}
+
+/*section-girls*/
+
+.section-girls {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background: url(../img/s1-girls.jpg), no-repeat;
+    background-size: cover;
+    height: 50em;
+    color: $whiteColor;
+    padding: $paddingSection;
+
+    h1 {
+        max-width: 77%;
+        font-size: 2.7em;
+        font-weight: 700;
+
+        span {
+            color: $orangeColor;
+        }
+    }
+
+    h2 {
+        font-weight: 400;
+        max-width: 20em;
+        margin-bottom: 5em;
+    }
+
+    p.section-girls--left-text {
+        font-size: 1em;
+        font-weight: 600;
+    }
+}
+
+.section-girls--description {
+    @include flexSpaceBetween;
+    align-items: flex-start;
+    position: relative;
+}
+
+.section-girls--advantages-wrapper {
+    p {
+        font-size: 1em;
+        margin-bottom: 2.5em;
+        max-width: 8em;
+        position: relative;
+
+        &:first-child {
+            left: 10em;
+        }
+
+        &:nth-child(2) {
+            left: 7em;
+        }
+
+        &:last-child {
+            left: 10em;
+        }
+    }
+}
+
+.section-girls--img {
+    position: absolute;
+    right: 230px;
+    top: -123px;
+}
+
+.promo {
+    @include promo;
+    font-weight: 400;
+}
+
+.promo--bold-text {
+    font-weight: 600;
+}
+
+/*sultan*/
+
+.sultan {
+
+    h2 {
+        text-align: center;
+        max-width: 21em;
+        margin: 0 auto 1em;
+    }
+
+    p > span {
+        font-weight: 600;
+    }
+
+    div {
+        @include flexSpaceBetween;
+    }
+}
+
+.sultan--text {
+    @include paddingText;
+}
+
+/*harem*/
+
+.harem {
+    padding: 1.5em;
+    margin: 1.5em;
+    @include darkRedBg;
+    @include borderRadius;
+
+    h3 {
+        color: $whiteColor;
+        text-align: center;
+        margin: 0 auto;
+        font-weight: 400;
+        max-width: 20em;
+
+        span {
+            font-weight: 600;
+        }
+    }
+}
+
+.harem--div-wrapper {
+    @include flexSpaceBetween;
+}
+
+.harem--border {
+    border: 2px solid $whiteColor;
+    @include borderRadius;
+}
+
+.harem__a {
+    width: 31%;
+    height: 11em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: $darkColor;
+    font-weight: 700;
+    text-align: center;
+    padding: 6em 2em 0;
+    @include borderRadius;
+
+    p {
+        font-size: 1em;
+    }
+
+    &:first-child {
+        background-image: url(../img/s3-1.png);
+    }
+
+    &:nth-child(2) {
+        background-image: url(../img/s3-2.png);
+    }
+
+    &:last-child {
+        background-image: url(../img/s3-3.png);
+    }
+
+        span {
+            display: block;
+            font-size: 0.7em;
+        }
+    
+}
+
+
+/*doctors*/
+
+.doctors {
+    @include flexSpaceBetween;
+    background-color: $orangeColor;
+
+    p {
+        @include paddingText;
+    }
+}
+
+/*recipe*/
+
+.recipe {
+    @include flexCenter;
+    padding: $paddingSection;
+    font-weight: 600;
+    text-align: center;
+
+    p {
+        margin-right: 2em;
+    }
+}
+
+/*faq*/
+
+.faq {
+    padding: 1.5em;
+    margin: 1.5em;
+    @include darkRedBg;
+    @include borderRadius;
+
+    h2 {
+        color: $whiteColor;
+        text-align: center;
+        margin: 0 auto;
+        font-weight: 400;
+        max-width: 20em;
+    }
+
+}
+
+.faq--border {
+    border: 2px solid $whiteColor;
+    @include borderRadius;
+}
+
+/*license*/
+
+.license {
+    @include flexSpaceBetween;
+    background-color: $orangeColor;
+
+    p {
+        margin-right: 2em;
+    }
+}
+
+/*discount*/
+
+.discount {
+    background: url(../img/s8-abst.png) center no-repeat;
+    height: 655px;
+    background-position: 0 100%;
+    background-size: cover;
+    padding: $paddingText;
+
+        p {
+            color: $whiteColor;
+            font-weight: 600;
+            max-width: 20px;
+        }
+
+}
+
+
+/*structure*/ 
+
+.structure {
+    background: url(../img/s9-bg.png) center no-repeat;
+}
+
+@media (max-width: 1450px) and (min-width: 320px) {
+    .discount {
+        background-size: auto;
+    }
+        
+}
